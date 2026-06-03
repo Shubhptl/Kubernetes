@@ -1,0 +1,40 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+.terraform.lock.hcl
+
+# Kubernetes temporary files
+*.tmp
+*.bak
+
+# Docker
+.docker/
+
+# Environment files
+.env
+.env.local
+
+# Python cache if used later
+__pycache__/
+*.pyc
+
+# Node modules if frontend uses Node later
+node_modules/
+
+# Build outputs
+dist/
+build/
+target/
