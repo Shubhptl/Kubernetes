@@ -35,3 +35,34 @@ Backend API Service
 Istio Service Mesh
     ↓
 Prometheus + Grafana
+
+## Sprint 1: Basic Kubernetes Application
+
+### Goal
+
+Deploy a frontend and backend microservices application to local Kubernetes using Minikube.
+
+### Completed Items
+
+- Created frontend service
+- Created backend Spring Boot API
+- Dockerized frontend and backend
+- Built Docker images locally
+- Loaded images into Minikube
+- Created Kubernetes Deployments
+- Created Kubernetes Services
+- Exposed frontend using NodePort
+- Verified frontend to backend communication
+
+### Architecture
+
+```text
+Browser
+ ↓
+frontend-service NodePort
+ ↓
+frontend pod
+ ↓
+backend-service ClusterIP
+ ↓
+backend pod
