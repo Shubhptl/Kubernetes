@@ -107,11 +107,27 @@ kubectl get pods -n prod
 kubectl get pods -n istio-system
 
 
----
+## Sprint 3: Zero-Trust Security
 
-# Step 20 — Commit Sprint 2 work
+### Goal
 
-Check:
+Implement zero-trust service-to-service security using Istio.
 
-```bash
-git status
+### Completed
+
+- Created dedicated ServiceAccounts for frontend and backend
+- Updated backend deployment to use backend-sa
+- Updated frontend deployment to use frontend-sa
+- Enforced STRICT mTLS in the prod namespace
+- Added default-deny AuthorizationPolicy
+- Added allow policy for frontend-to-backend traffic only
+- Validated unauthorized traffic is denied
+
+### Security Model
+
+```text
+frontend-sa → backend-service:8080 = allowed
+default service account → backend-service:8080 = denied
+non-authorized workloads → backend-service:8080 = denied
+
+
