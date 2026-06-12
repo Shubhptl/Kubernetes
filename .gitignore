@@ -44,3 +44,6 @@ istio-*/
 
 # Executables
 *.exe
+
+*.zip
+istio-*/

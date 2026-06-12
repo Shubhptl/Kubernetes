@@ -18,6 +18,7 @@ spec:
         app: frontend
         version: v1
     spec:
+      serviceAccountName: frontend-sa
       containers:
         - name: frontend
           image: zero-trust-frontend:v1
