@@ -18,6 +18,7 @@ spec:
         app: backend
         version: v1
     spec:
+      serviceAccountName: backend-sa
       containers:
         - name: backend
           image: zero-trust-backend:v1
