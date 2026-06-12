@@ -66,3 +66,52 @@ frontend pod
 backend-service ClusterIP
  ↓
 backend pod
+
+Commands
+./scripts/build-images.sh
+./scripts/deploy-app.sh
+minikube service frontend-service -n prod
+
+
+
+---
+
+# Step 19 — Update README
+
+Add this section to your `README.md`:
+
+```markdown
+## Sprint 2: Istio Installation and Sidecar Injection
+
+### Goal
+
+Install Istio using Helm and enable Envoy sidecar injection for the application namespace.
+
+### Completed Items
+
+- Installed Istio Helm repository
+- Installed Istio base CRDs
+- Installed Istiod control plane
+- Installed Istio ingress gateway
+- Enabled sidecar injection for prod namespace
+- Restarted frontend and backend deployments
+- Verified application pods changed from 1/1 to 2/2 containers
+- Confirmed application still works after sidecar injection
+
+### Commands
+
+```bash
+./scripts/install-istio.sh
+./scripts/enable-sidecar-injection.sh
+kubectl get pods -n prod
+kubectl get pods -n istio-system
+
+
+---
+
+# Step 20 — Commit Sprint 2 work
+
+Check:
+
+```bash
+git status
