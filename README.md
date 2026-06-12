@@ -131,3 +131,31 @@ default service account → backend-service:8080 = denied
 non-authorized workloads → backend-service:8080 = denied
 
 
+
+
+## Sprint 4: Traffic Management and Canary Deployment
+
+### Goal
+
+Implement safe release and reliability controls using Istio traffic management.
+
+### Completed
+
+- Deployed backend v2
+- Added Istio DestinationRule for backend v1/v2 subsets
+- Added Istio VirtualService for canary routing
+- Configured 90/10 traffic split
+- Added header-based routing for beta testers
+- Added retries and timeouts
+- Added circuit breaker and outlier detection policy
+- Added traffic validation script
+
+### Traffic Policy
+
+```text
+Normal traffic:
+90% → backend v1
+10% → backend v2
+
+Beta tester traffic:
+100% → backend v2
