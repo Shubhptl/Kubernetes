@@ -38,3 +38,9 @@ node_modules/
 dist/
 build/
 target/
+
+# Local downloaded tools
+istio-*/
+
+# Executables
+*.exe
