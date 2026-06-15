@@ -131,3 +131,45 @@ default service account → backend-service:8080 = denied
 non-authorized workloads → backend-service:8080 = denied
 
 
+
+---
+
+# Step 18 — Update README
+
+Add this section:
+
+```markdown
+## Sprint 5: Observability with Prometheus and Grafana
+
+### Goal
+
+Add SRE observability using Prometheus and Grafana.
+
+### Completed
+
+- Installed Prometheus using Helm
+- Installed Grafana using Helm
+- Added Prometheus as Grafana data source
+- Generated traffic to backend service
+- Queried Istio metrics
+- Created dashboard panels for request rate, errors, latency, CPU, and memory
+- Added observability scripts and documentation
+
+### Key Metrics
+
+```text
+Traffic: request rate by service
+Errors: response codes and 5xx rate
+Latency: P95 request duration
+Saturation: CPU and memory usage
+Canary: backend v1 vs v2 traffic
+
+
+---
+
+# Step 19 — Commit Sprint 5 work
+
+Check:
+
+```bash
+git status
