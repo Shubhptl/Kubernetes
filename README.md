@@ -181,3 +181,27 @@ Check:
 
 ```bash
 git status
+
+
+## Sprint 6: GitHub Actions CI Validation
+
+### Goal
+
+Add enterprise-style CI validation using GitHub Actions.
+
+### Completed
+
+- Added Docker build validation workflow
+- Added Kubernetes manifest validation workflow
+- Added Terraform validation workflow
+- Added project structure validation workflow
+- Added GitHub Actions badges
+- Documented CI design and local vs cloud limitation
+
+### CI Workflows
+
+```text
+docker-build.yml           → validates frontend/backend Docker builds
+kubernetes-validate.yml    → validates Kubernetes YAML files
+terraform-validate.yml     → validates Terraform formatting and syntax
+project-checks.yml         → validates required folders and files
