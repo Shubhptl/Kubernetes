@@ -1,3 +1,11 @@
+# Zero-Trust Service Mesh on Kubernetes using Istio
+
+![Docker Build Validation](https://github.com/Shubhptl/Kubernetes/actions/workflows/docker-build.yml/badge.svg)
+![Kubernetes Manifest Validation](https://github.com/Shubhptl/Kubernetes/actions/workflows/kubernetes-validate.yml/badge.svg)
+![Terraform Validation](https://github.com/Shubhptl/Kubernetes/actions/workflows/terraform-validate.yml/badge.svg)
+![Project Structure Checks](https://github.com/Shubhptl/Kubernetes/actions/workflows/project-checks.yml/badge.svg)
+
+
 # Kubernetes
 # Zero-Trust Service Mesh on Kubernetes using Istio
 
