@@ -1,0 +1,27 @@
+name: Docker Build Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+      - sprint-6-github-actions-ci
+
+jobs:
+  docker-build:
+    name: Build Frontend and Backend Images
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build backend Docker image
+        run: |
+          docker build -t zero-trust-backend:test ./apps/backend
+
+      - name: Build frontend Docker image
+        run: |
+          docker build -t zero-trust-frontend:test ./apps/frontend
