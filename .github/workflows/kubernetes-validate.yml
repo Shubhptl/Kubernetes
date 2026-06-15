@@ -1,0 +1,35 @@
+name: Kubernetes Manifest Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+      - sprint-6-github-actions-ci
+
+jobs:
+  validate-kubernetes-yaml:
+    name: Validate Kubernetes YAML
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install kubeconform
+        run: |
+          curl -L -o kubeconform.tar.gz https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64.tar.gz
+          tar xf kubeconform.tar.gz
+          sudo mv kubeconform /usr/local/bin/kubeconform
+          kubeconform -v
+
+      - name: Validate Kubernetes manifests
+        run: |
+          kubeconform -summary -ignore-missing-schemas \
+            k8s/namespaces \
+            k8s/service-accounts \
+            k8s/deployments \
+            k8s/services \
+            k8s/istio
