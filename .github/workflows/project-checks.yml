@@ -1,0 +1,41 @@
+name: Project Structure Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+      - sprint-6-github-actions-ci
+
+jobs:
+  project-checks:
+    name: Verify Required Project Files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required folders
+        run: |
+          test -d apps/frontend
+          test -d apps/backend
+          test -d k8s
+          test -d k8s/istio
+          test -d scripts
+          test -d docs
+          test -d terraform
+          test -d observability
+
+      - name: Check required files
+        run: |
+          test -f README.md
+          test -f apps/frontend/Dockerfile
+          test -f apps/backend/Dockerfile
+          test -f k8s/deployments/frontend-deployment.yaml
+          test -f k8s/deployments/backend-deployment.yaml
+          test -f k8s/istio/peer-authentication.yaml
+          test -f k8s/istio/default-deny-authorization-policy.yaml
+          test -f k8s/istio/allow-frontend-to-backend.yaml
